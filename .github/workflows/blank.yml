@@ -1,0 +1,8 @@
+name: My_firstWorkflow
+on: create
+jobs:
+  myfirst_job:
+    runs-on: windows-latest
+    steps:
+      -name: My firstjob
+      run: echo "Hello world"
