@@ -15,5 +15,7 @@ jobs:
     runs-on: 	windows-latest
     steps:
       - name: Test the job
-        run: echo "Test job"
+        run: |
+          echo "Test job"
+          echo "Test 2 job"
   
