@@ -1,8 +1,8 @@
 name: My_firstWorkflow
 on: create
 jobs:
-  myfirst_job:
+  myfirst-job:
     runs-on: windows-latest
     steps:
       -name: My firstjob
-      run: python --version
+        run: python --version
