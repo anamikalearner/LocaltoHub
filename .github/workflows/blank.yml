@@ -4,7 +4,7 @@ jobs:
   myfirst-job:
     runs-on: windows-latest
     steps:
-        -name: My firstjob
-         run: echo "hello"
-        -name: Run the code
-         run: echo "Hello world"
+        - name: My firstjob
+          run: echo "hello"
+        - name: Run the code
+          run: echo "Hello world"
