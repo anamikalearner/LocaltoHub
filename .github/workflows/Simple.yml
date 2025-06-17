@@ -1,0 +1,19 @@
+name: Trigger on update
+on : 
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  Build:
+    runs-on: 	windows-latest
+    steps:
+      - name: First run
+        run: python --version
+      - name: Second run
+      run: echo "Python version displayed"
+  Test:
+    runs-on: 	windows-latest
+    steps:
+      - name: Test the job
+      run: echo "Test job"
+  
