@@ -1,5 +1,7 @@
 name: My_firstWorkflow
-on: create
+on:
+  pull_request:
+    types: [opened,reopened]
 jobs:
   myfirst-job:
     runs-on: windows-latest
