@@ -5,4 +5,6 @@ jobs:
     runs-on: windows-latest
     steps:
       -name: My firstjob
-        run: python --version
+       run: python --version
+      -name: Run the code
+       run: echo "Hello world"
