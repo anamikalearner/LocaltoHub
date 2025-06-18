@@ -1,0 +1,7 @@
+name: Deploy html file in EC2
+on: push
+jobs:
+  deploy:
+  run-on: windows-lates
+  steps:
+    - 
