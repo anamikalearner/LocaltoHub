@@ -1,13 +1,7 @@
-name: My_firstWorkflow
-on:
-  pull_request:
-    types: [opened,reopened]
+name: Deploy html file in EC2
+on: push
 jobs:
-  myfirst-job:
-    runs-on: windows-latest
-    steps:
-        - name: My firstjob
-          run: |
-            echo "hello"
-            echo "Hi"
-        
+  deploy:
+  run-on: windows-lates
+  steps:
+    - 
