@@ -1,8 +1,21 @@
 name: Handle issues
-on: issues
+on: 
+  issues:
+    types:
+      - closed
+  workflow_dispatch:
 jobs:
-  output-info:
+ build:
     runs-on: ubuntu-latest
     steps:
       - name: Output event details
         run: echo "${{ toJSON(github.event) }}"
+  Test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: shell command
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        run: python --version
