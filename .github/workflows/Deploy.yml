@@ -10,12 +10,14 @@ jobs:
     steps:
       - name: Output event details
         run: echo "${{ toJSON(github.event) }}"
-  Test:
+ test:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: shell command
         uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5 
+      - name: Run commands
         run: python --version
+       
