@@ -1,7 +1,8 @@
-name: Deploy html file in EC2
-on: push
+name: Handle issues
+on: issues
 jobs:
-  deploy:
-  run-on: windows-lates
-  steps:
-    - 
+  output-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event details
+        run: echo "${{ toJSON(github.event) }}"
