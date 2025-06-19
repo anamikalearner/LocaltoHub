@@ -13,12 +13,14 @@ jobs:
     steps:
       - name: Run commands
         id: abc
-        run: mkdir disc ; echo "test=Hello" >> "$GITHUB_OUTPUTS" ; echo "hi"
+        run: mkdir disc ; echo "test=Hello" >> "$GITHUB_OUTPUTS" ; echo "hi" > disc/hi.txt
       - name: upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Upload file
           path: disc
+      - name: Output file demo
+        run: echo "Message=${{steps.abc.outputs.test}}"
         
 
   # test:
