@@ -1,8 +1,8 @@
 name: Handle issues
 on: 
-  issues:
-    types:
-      - closed
+  # issues:
+  #   types:
+  #     - closed
   workflow_dispatch:
 jobs:
  build:
