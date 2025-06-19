@@ -18,9 +18,9 @@ jobs:
         env:
           First_Name: Mona
   Test:
-    runs-on: windows_latest
+    runs-on: windows-latest
     steps:
       - name: Check runner
-        run: echo "Hi $env:Name "
+        run: echo "Hi $env:Name and $env:OS_RUNNER name "
     
   
