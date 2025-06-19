@@ -20,7 +20,7 @@ jobs:
           name: Upload file
           path: disc
       - name: Output file demo
-        run: echo "Message=${{steps.abc.outputs.test}}"
+        run: echo "${{steps.abc.outputs.test}}"
         
 
   test:
@@ -28,6 +28,6 @@ jobs:
     runs-on: windows-latest
     steps:
      - name: Display build job output
-       run: cat output.txt
+       run: cat hi.txt
      - name: Out demo
-       run: echo '${needs.build.outputs}'
+       run: echo '${{needs.build.outputs}}'
