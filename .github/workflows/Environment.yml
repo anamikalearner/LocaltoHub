@@ -1,0 +1,17 @@
+name: Environment Demo
+on:
+  workflow_dispatch
+
+env:
+  Name: Arpitha
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    env:
+      Name: Anamika
+    steps:
+      - name: Enironment variable usage
+        run: echo "$Name $First_Name"
+        env:
+          First_Name: Mona
