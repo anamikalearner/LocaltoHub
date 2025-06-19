@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     # Map a step output to a job output
     outputs:
-      one: ${{ steps.step1.outputs.test }}
-      two: ${{ steps.step1.outputs.test1 }}
+      one: ${{steps.step1.outputs.test}}
+      two: ${{steps.step1.outputs.test1}}
     steps:
         - name: Out generating
           id: step1
@@ -15,7 +15,7 @@ jobs:
             echo "test1=hello" >> "$GITHUB_OUTPUT"
             echo "test=world" >> "$GITHUB_OUTPUT"
         - name: Inside output display
-          run: echo " out value inside job ${{ steps.step1.outputs.test1}}"
+          run: echo "${{steps.step1.outputs.test1}}"
   job2:
     runs-on: ubuntu-latest
     needs: job1
