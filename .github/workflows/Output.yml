@@ -23,4 +23,4 @@ jobs:
         #     OUTPUT1: ${{needs.job1.outputs.output1}}
         #     OUTPUT2: ${{needs.job1.outputs.output2}}
         - name: Output Demo
-          run: echo "${{needs.job1.outputs.one}}""
+          run: echo "${{needs.job1.outputs.one}}"
