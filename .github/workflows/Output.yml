@@ -1,7 +1,5 @@
 name: Artifacts Demo
-on:
-  issues:
-    types: [opened,closed]
+on: workflow_dispatch
     
 jobs:
   job1:
@@ -9,6 +7,7 @@ jobs:
     # Map a step output to a job output
     outputs:
       one: ${{ steps.step1.outputs.test }}
+      two: ${{steps.step1.outputs.test1}}
     steps:
         - name: Out generating
           id: step1
