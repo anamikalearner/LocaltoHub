@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 
 env:
-  Name: ${{secrets.SECRATE_NAME}}
+  Name: ${{secrets.SECREAT_NAME}}
 
 jobs:
   Build:
