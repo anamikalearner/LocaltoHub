@@ -12,6 +12,15 @@ jobs:
       Name: Anamika
     steps:
       - name: Enironment variable usage
-        run: echo "$Name $First_Name"
+        run: |
+          echo "$Name $First_Name"
+          echo "How are you $Name? who is the $GITHUB_ACTOR"
         env:
           First_Name: Mona
+  Test:
+    runs-on: windows_latest
+    steps:
+      - name: Check runner
+        run: echo "Which runner we are using $env.RUNNER_OS can you confirm $Name"
+    
+  
