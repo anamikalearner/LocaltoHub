@@ -1,16 +1,18 @@
 name: Artifacts Demo
 on:
-  issue:[opened,closed]
+  issues:
+    
 
 jobs:
   build:
     runs-on: windows-latest
     steps:
-      - run: echo "Hello" > output.txt
-        run: cat output.txt
+      - name: Run commands
+        run: echo "Hello" > output.txt ; echo "hi"
+        
 
   test:
     runs-on: windows-latest
     steps:
     - name: Display build job output
-    - run: cat output.txt
+      run: cat output.txt
