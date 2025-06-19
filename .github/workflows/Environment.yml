@@ -21,6 +21,6 @@ jobs:
     runs-on: windows_latest
     steps:
       - name: Check runner
-        run: echo "Which runner we are using $env.RUNNER_OS can you confirm $Name"
+        run: echo "Who is the actor $env.GITHUB_ACTOR can you confirm $Name"
     
   
