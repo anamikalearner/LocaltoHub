@@ -5,25 +5,25 @@ on:
     
 
 jobs:
+
   build:
+    outputs:
+      one: ${{steps.abc.outputs.test}}
     runs-on: windows-latest
     steps:
       - name: Run commands
-        run: mkdir disc ; echo "Hello" > disc/output.txt ; echo "hi"
+        id: abc
+        run: mkdir disc ; echo "test=Hello" >> "$GITHUB_OUTPUTS" ; echo "hi"
       - name: upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Upload file
-          path: disc/
+          path: disc
         
 
-  test:
-    needs: build
-    runs-on: windows-latest
-    steps:
-    - name: Download artifacts
-      uses: actions/download-artifact@v4
-      with:
-       name: Upload file
-    - name: Display build job output
-      run: cat output.txt
+  # test:
+  #   needs: build
+  #   runs-on: windows-latest
+  #   steps:
+  #   - name: Display build job output
+  #     run: cat output.txt
