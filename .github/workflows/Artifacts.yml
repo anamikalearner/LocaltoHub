@@ -1,6 +1,7 @@
 name: Artifacts Demo
 on:
   issues:
+    types: [opened,closed]
     
 
 jobs:
