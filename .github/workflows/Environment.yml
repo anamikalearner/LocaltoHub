@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 
 env:
-  Name: Arpitha
+  Name: ${{secrets.SECRATE_NAME}}
 
 jobs:
   Build:
