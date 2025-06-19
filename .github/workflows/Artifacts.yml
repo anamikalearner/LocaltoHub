@@ -7,9 +7,10 @@ on:
 jobs:
 
   build:
+    runs-on: windows-latest
     outputs:
       one: ${{steps.abc.outputs.test}}
-    runs-on: windows-latest
+    
     steps:
       - name: Run commands
         id: abc
