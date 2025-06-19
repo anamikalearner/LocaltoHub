@@ -21,6 +21,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check runner
-        run: echo "Hi $env:Name and $env:OS_RUNNER name "
+        run: echo "Hi $env:Name and $env:RUNNER_OS name "
     
   
