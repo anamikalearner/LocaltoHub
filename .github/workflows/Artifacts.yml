@@ -9,10 +9,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Run commands
-        run: echo "Hello" > output.txt ; echo "hi"
+        run: echo "Hello" > output.txt
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Upload file
+          path: disc
         
 
   test:
+    needs: build
     runs-on: windows-latest
     steps:
     - name: Display build job output
