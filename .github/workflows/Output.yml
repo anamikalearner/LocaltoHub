@@ -1,4 +1,4 @@
-name: Artifacts Demo
+name: Output Demo
 on: workflow_dispatch
     
 jobs:
