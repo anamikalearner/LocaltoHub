@@ -27,7 +27,5 @@ jobs:
     needs: build
     runs-on: windows-latest
     steps:
-     - name: Display build job output
-       run: cat hi.txt
      - name: Out demo
-       run: echo '${{needs.build.outputs}}'
+       run: echo '${{needs.build.outputs.one}}'
