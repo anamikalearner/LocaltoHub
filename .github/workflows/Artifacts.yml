@@ -21,5 +21,9 @@ jobs:
     needs: build
     runs-on: windows-latest
     steps:
+    - name: Download artifacts
+      uses: actions/download-artifact@4
+      with:
+       name: Upload file
     - name: Display build job output
       run: cat output.txt
