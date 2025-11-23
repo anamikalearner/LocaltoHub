@@ -1,0 +1,32 @@
+name: Artifacts Demo
+on: workflow_dispatch
+  # issues:
+  #   types: [opened,closed]
+    
+
+jobs:
+
+  build:
+    runs-on: windows-latest
+    outputs:
+      one: ${{steps.abc.outputs.test}}
+    
+    steps:
+      - name: Run commands
+        id: abc
+        run: mkdir disc ; echo "test=world" >> "$GITHUB_OUTPUT" ; echo "hi" > disc/hi.txt
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Upload file
+          path: disc
+      - name: Output file demo
+        run: echo "${{steps.abc.outputs.test}}"
+        
+
+  test:
+    needs: build
+    runs-on: windows-latest
+    steps:
+     - name: Out demo
+       run: echo '${{needs.build.outputs.one}}'
